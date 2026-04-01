@@ -12,6 +12,7 @@ uniform float colorR;
 uniform float colorG;
 uniform float colorB;
 uniform float brightness;
+uniform float speed;
 
 void main()
 {
@@ -23,7 +24,7 @@ void main()
          
     vec4 z = o = vec4(z_init_x, z_init_y, z_init_z, 0.);
      
-    for (float a = .5, t = iTime, i; 
+    for (float a = .5, t = iTime * speed, i; 
          ++i < loopCount; 
          o += (1. + cos(z+t)) 
             / length((1.+i*dot(v,v)) 

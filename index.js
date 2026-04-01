@@ -23,6 +23,7 @@ const uniforms = {
   colorG: { value: 0.4 },
   colorB: { value: 0.8 },
   brightness: { value: 1.0 },
+  speed: { value: 1.0 },
 };
 
 // Load shader files
@@ -42,7 +43,7 @@ const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 
 // Wire up slider controls
-const sliders = ['loopCount', 'scale', 'increment', 'tanh_mul', 'z_init_x', 'z_init_y', 'z_init_z', 'colorR', 'colorG', 'colorB', 'brightness'];
+const sliders = ['loopCount', 'scale', 'increment', 'tanh_mul', 'z_init_x', 'z_init_y', 'z_init_z', 'colorR', 'colorG', 'colorB', 'brightness', 'speed'];
 sliders.forEach(name => {
   const slider = document.getElementById(name);
   const valueDisplay = document.getElementById(`${name}-val`);
