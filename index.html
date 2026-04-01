@@ -18,9 +18,11 @@
             overflow: hidden;
             font-family: Arial, sans-serif;
         }
+
         #canvas {
             display: block;
         }
+
         #controls {
             position: absolute;
             top: 10px;
@@ -35,17 +37,21 @@
             font-size: 12px;
             z-index: 100;
         }
+
         .control-group {
             margin-bottom: 15px;
         }
+
         label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
         }
+
         input[type="range"] {
             width: 100%;
         }
+
         .value {
             font-size: 11px;
             color: #aaa;
@@ -57,7 +63,7 @@
 <body>
     <div id="controls">
         <h3>Shader Controls</h3>
-        
+
         <div class="control-group">
             <label for="loopCount">Loop Count</label>
             <input type="range" id="loopCount" min="1" max="50" value="19" step="1">
