@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shader Project</title>
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.183.2/build/three.module.js"
+      }
+    }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        #canvas {
+            display: block;
+        }
+        #controls {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 300px;
+            max-height: 90vh;
+            overflow-y: auto;
+            font-size: 12px;
+            z-index: 100;
+        }
+        .control-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="range"] {
+            width: 100%;
+        }
+        .value {
+            font-size: 11px;
+            color: #aaa;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="controls">
+        <h3>Shader Controls</h3>
+        
+        <div class="control-group">
+            <label for="loopCount">Loop Count</label>
+            <input type="range" id="loopCount" min="1" max="50" value="19" step="1">
+            <div class="value"><span id="loopCount-val">19</span></div>
+        </div>
+
+        <div class="control-group">
+            <label for="scale">Scale</label>
+            <input type="range" id="scale" min="0.01" max="1" value="0.2" step="0.01">
+            <div class="value"><span id="scale-val">0.2</span></div>
+        </div>
+
+        <div class="control-group">
+            <label for="increment">Increment</label>
+            <input type="range" id="increment" min="0.001" max="0.2" value="0.03" step="0.001">
+            <div class="value"><span id="increment-val">0.03</span></div>
+        </div>
+
+        <div class="control-group">
+            <label for="tanh_mul">Tanh Multiplier</label>
+            <input type="range" id="tanh_mul" min="1" max="100" value="40" step="1">
+            <div class="value"><span id="tanh_mul-val">40</span></div>
+        </div>
+
+        <div class="control-group">
+            <label for="z_init_x">Z Init X</label>
+            <input type="range" id="z_init_x" min="0" max="10" value="1" step="0.1">
+            <div class="value"><span id="z_init_x-val">1</span></div>
+        </div>
+
+        <div class="control-group">
+            <label for="z_init_y">Z Init Y</label>
+            <input type="range" id="z_init_y" min="0" max="10" value="2" step="0.1">
+            <div class="value"><span id="z_init_y-val">2</span></div>
+        </div>
+
+        <div class="control-group">
+            <label for="z_init_z">Z Init Z</label>
+            <input type="range" id="z_init_z" min="0" max="10" value="3" step="0.1">
+            <div class="value"><span id="z_init_z-val">3</span></div>
+        </div>
+
+        <div class="control-group">
+            <label for="colorR">Color R</label>
+            <input type="range" id="colorR" min="0" max="1" value="0.3" step="0.01">
+            <div class="value"><span id="colorR-val">0.3</span></div>
+        </div>
+
+        <div class="control-group">
+            <label for="colorG">Color G</label>
+            <input type="range" id="colorG" min="0" max="1" value="0.4" step="0.01">
+            <div class="value"><span id="colorG-val">0.4</span></div>
+        </div>
+
+        <div class="control-group">
+            <label for="colorB">Color B</label>
+            <input type="range" id="colorB" min="0" max="1" value="0.8" step="0.01">
+            <div class="value"><span id="colorB-val">0.8</span></div>
+        </div>
+
+        <div class="control-group">
+            <label for="brightness">Brightness</label>
+            <input type="range" id="brightness" min="0" max="3" value="1" step="0.1">
+            <div class="value"><span id="brightness-val">1</span></div>
+        </div>
+    </div>
+
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
